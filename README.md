@@ -1,6 +1,7 @@
 # My Friend ChatBot! / CNN 기반 인공지능 챗봇을 이용한 언어 학습 프로그램
 
-*프로젝트 개요*
+***프로젝트 개요***
+
 One Paragraph of project description goes here / 프로젝트의 전반적인 내용에 대한 요약을 여기에 적습니다
 
 ## 📅 Project Period / 프로젝트 기간
