@@ -18,9 +18,9 @@ One Paragraph of project description goes here / 프로젝트의 전반적인 �
 
 ## 🙋 Project teammate / 프로젝트 팀원
 
-> 백혜민 ☞ 아이디어 기획,블라블라 담당
+> [백혜민](https://github.com/HyeminBaek) ☞ 아이디어 기획,블라블라 담당
 ###
-> 이정혁 ☞
+> [이정혁](https://github.com/wjdgurrj) ☞ 
 
 ```
 예시
