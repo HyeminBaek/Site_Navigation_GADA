@@ -147,3 +147,4 @@ cnn
 ```
 예시
 ```
+``` npm install mysql ```
