@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<!--작성자 백혜민
+    참고) http://codingschool.info/content/index.php?type=content&lang=css&cat=form&menu=css_form -->
+
+<head>
+    <meta charset="utf-8">
+    <title>GADA 서비스 회원 가입 페이지</title>
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1" />
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    ul {
+        list-style-type: none;
+    }
+    /*폼 글자 기본 설정*/
+    #mem_form { 
+        width: 500px;
+        margin: 0 auto;
+        font-family: "돋움";
+        font-size: 16px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        border-top: solid 1px  #cccccc;
+        border-bottom: solid 1px #cccccc;
+    }
+   .cols li {
+        display: inline-block; 
+        margin-top: 5px;
+    }
+   .cols li.col1 {
+        width: 100px;
+        text-align: right;
+    }
+   .cols li.col2 {
+        width: 350px;
+    }
+   #intro {
+        font-family: "바탕";
+        width: 500px;
+        margin: 0 auto;
+        vertical-align: top; 
+    }
+    /* 가운데 정렬하기 위함*/
+    #align { 
+        position:relative; 
+        left:50vw; 
+        top:50vh;
+        transform: translate(-50%, -50%); 
+        width:500px; 
+        height: 200px; 
+        text-align:left;
+    }
+    </style>
+</head>
+
+<body>
+    <form>
+        <ul id = "align">
+            <ul id = "intro">
+                <li>
+                    <ul class="cols">
+                    <h2>회원 가입</h2>
+                    </ul>
+                </li>
+    </form>
+    <form>
+        <ul id="mem_form">
+            <li>
+                <ul class="cols">
+                    <li class="col1">아이디 :</li>
+                    <li class="col2"><input type="text"></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="cols">
+                    <li class="col1">비밀번호 :</li>
+                    <li class="col2"><input type="password"></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="cols">
+                    <li class="col1">비밀번호 확인 :</li>
+                    <li class="col2"><input type="password"></li>    
+                </ul>
+            </li>
+            <!--버튼 정렬-->
+            <button>제출하기</button>
+        </ul>
+    </form>
+</body>
+
+</html>
