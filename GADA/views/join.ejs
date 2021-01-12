@@ -67,17 +67,17 @@
                 </li>
     </form>
     <form>
-        <ul id="mem_form">
+        <ul>
             <li>
                 <ul class="cols">
                     <li class="col1">아이디 :</li>
-                    <li class="col2"><input type="text"></li>
+                    <li class="col2"><input  id = "userId" type="text" value =""></li>
                 </ul>
             </li>
             <li>
                 <ul class="cols">
                     <li class="col1">비밀번호 :</li>
-                    <li class="col2"><input type="password"></li>
+                    <li class="col2"><input id = "userPassword" type="password"  value =""></li>
                 </ul>
             </li>
             <li>
@@ -87,9 +87,31 @@
                 </ul>
             </li>
             <!--버튼 정렬-->
-            <button style = "float:right">제출하기</button>
+            <button id = "signupBtn" style = "float:right" class="button circle block orange">제출하기</button>
         </ul>
     </form>
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="js/global.script.js"></script>
+    <script>
+        $("#signupBtn").click(function () {
+            var userId = $("#userId").val();
+            var userPassword = $("#userPassword").val(); 
+            $.ajax({
+                url: "/join",
+                type: "POST",
+                data: {
+                    userId: userId,
+                    userPassword: userPassword,
+                },
+                success: function (data) {
+                    if (data == "1") {
+                        alert("signup success!!!!");
+                    } else {
+                        alert("signup fail....");
+                    }
+                 },
+            });
+        });
+        </script>
+    </body>
 </html>
