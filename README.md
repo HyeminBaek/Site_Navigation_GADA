@@ -59,12 +59,10 @@ GADA는 사용자의 음성을 인식하여 원하는 페이지로 쉽게 이동
 
 ~기술블라블라 를 이용하였습니다.
 
-제일 처음에 보여지는 메인화면은 다음과 같습니다.
-login.ejs
+제일 처음에 보여지는 메인화면은 다음과 같습니다 ☞ login.ejs
 ![로그인](https://user-images.githubusercontent.com/55080554/104297089-c8faa900-5505-11eb-81bd-02c536177941.jpg)
 
-회원가입 화면은 다음과 같습니다.
-join.ejs
+회원가입 화면은 다음과 같습니다 ☞ join.ejs
 ![image](https://user-images.githubusercontent.com/55080554/104696065-043ce800-5751-11eb-8c4c-64fa0f09367d.png)
 
 로그인 성공 시 화면은 다음과 같습니다.
