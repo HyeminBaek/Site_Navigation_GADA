@@ -1,117 +1,39 @@
 <!DOCTYPE html>
 
 <!--작성자 백혜민
-    참고) http://codingschool.info/content/index.php?type=content&lang=css&cat=form&menu=css_form -->
+    참고) https://lucidmaj7.tistory.com/251 -->
 
 <head>
     <meta charset="utf-8">
     <title>GADA 서비스 회원 가입 페이지</title>
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1" />
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    ul {
-        list-style-type: none;
-    }
-    /*폼 글자 기본 설정*/
-    #mem_form { 
-        width: 500px;
-        margin: 0 auto;
-        font-family: "돋움";
-        font-size: 16px;
-        padding-top: 5px;
-        padding-bottom: 10px;
-        border-top: solid 1px  #cccccc;
-        border-bottom: solid 1px #cccccc;
-    }
-   .cols li {
-        display: inline-block; 
-        margin-top: 5px;
-    }
-   .cols li.col1 {
-        width: 100px;
-        text-align: right;
-    }
-   .cols li.col2 {
-        width: 350px;
-    }
-   #intro {
-        font-family: "바탕";
-        width: 500px;
-        margin: 0 auto;
-        vertical-align: top; 
-    }
-    /* 가운데 정렬하기 위함*/
-    #align { 
-        position:relative; 
-        left:50vw; 
-        top:50vh;
-        transform: translate(-50%, -50%); 
-        width:500px; 
-        height: 200px; 
-        text-align:left;
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <form>
-        <ul id = "align">
-            <ul id = "intro">
-                <li>
-                    <ul class="cols">
-                    <h2>회원 가입</h2>
-                    </ul>
-                </li>
-    </form>
-    <form>
-        <ul>
-            <li>
-                <ul class="cols">
-                    <li class="col1">아이디 :</li>
-                    <li class="col2"><input  id = "userId" type="text" value =""></li>
-                </ul>
-            </li>
-            <li>
-                <ul class="cols">
-                    <li class="col1">비밀번호 :</li>
-                    <li class="col2"><input id = "userPassword" type="password"  value =""></li>
-                </ul>
-            </li>
-            <li>
-                <ul class="cols">
-                    <li class="col1">비밀번호 확인 :</li>
-                    <li class="col2"><input type="password"></li>    
-                </ul>
-            </li>
-            <!--버튼 정렬-->
-            <button id = "signupBtn" style = "float:right" class="button circle block orange">제출하기</button>
-        </ul>
-    </form>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="js/global.script.js"></script>
-    <script>
-        $("#signupBtn").click(function () {
-            var userId = $("#userId").val();
-            var userPassword = $("#userPassword").val(); 
-            $.ajax({
-                url: "/join",
-                type: "POST",
-                data: {
-                    userId: userId,
-                    userPassword: userPassword,
-                },
-                success: function (data) {
-                    if (data == "1") {
-                        alert("signup success!!!!");
-                    } else {
-                        alert("signup fail....");
-                    }
-                 },
-            });
-        });
-        </script>
-    </body>
+    <div class="page-container">
+<div class="login-form-left-side">
+                <div class="login-input-container">
+                    <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input placeholder="아이디" type="text">
+                    </div>
+                    <div class="login-input-wrap input-password">
+                        <i class="fas fa-key"></i>
+                        <input placeholder="비밀번호"  type="password">
+                    </div>
+                    <div class="login-input-wrap input-password">
+                        <i class="fas fa-key"></i>
+                        <input placeholder="비밀번호 확인"  type="password">
+                    </div>
+                </div>
+                <div class="login-btn-wrap">
+                    <button class="login-btn">가입하기</button>
+                </div>
+            </div>
+    </div>
+</body>
+
 </html>
