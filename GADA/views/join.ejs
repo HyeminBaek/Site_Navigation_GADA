@@ -26,11 +26,11 @@
                     </div>
                     <div class="login-input-wrap input-password">
                         <i class="fas fa-key"></i>
-                        <input placeholder="비밀번호 확인"  type="password">
+                        <input id = "checkPassword" placeholder="비밀번호 확인"  type="password">
                     </div>
                 </div>
                 <div class="login-btn-wrap">
-                    <button class="login-btn">가입하기</button>
+                    <button id = "signupBtn" class="login-btn">가입하기</button>
                 </div>
             </div>
     </div>
@@ -39,19 +39,22 @@
     <script>
         $("#signupBtn").click(function () {
             var userId = $("#userId").val();
-            var userPassword = $("#userPassword").val(); 
+            var userPassword = $("#userPassword").val();
+            var checkPassword = $("#checkPassword").val();
             $.ajax({
                 url: "/join",
                 type: "POST",
                 data: {
                     userId: userId,
                     userPassword: userPassword,
+                    checkPassword: checkPassword,
                 },
                 success: function (data) {
-                    if (data == "1") {
-                        alert("signup success!!!!");
-                    } else {
-                        alert("signup fail....");
+                    if (data == "성공") {
+                        alert("회원가입 성공!");
+                    }
+                    else{
+                        alert("회원가입 실패! 비밀번호를 다시 확인해주세요");
                     }
                  },
             });
