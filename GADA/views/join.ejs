@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!--작성자 백혜민
+<!--작성자 백혜민,이정혁
     참고) https://lucidmaj7.tistory.com/251 -->
 
 <head>
@@ -14,15 +14,15 @@
 
 <body>
     <div class="page-container">
-<div class="login-form-left-side">
+        <div class="login-form-left-side">
                 <div class="login-input-container">
                     <div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>
-                        <input placeholder="아이디" type="text">
+                        <input id = "userId" placeholder="아이디" type="text">
                     </div>
                     <div class="login-input-wrap input-password">
                         <i class="fas fa-key"></i>
-                        <input placeholder="비밀번호"  type="password">
+                        <input id="userPassword" placeholder="비밀번호"  type="password">
                     </div>
                     <div class="login-input-wrap input-password">
                         <i class="fas fa-key"></i>
@@ -34,6 +34,29 @@
                 </div>
             </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="js/global.script.js"></script>
+    <script>
+        $("#signupBtn").click(function () {
+            var userId = $("#userId").val();
+            var userPassword = $("#userPassword").val(); 
+            $.ajax({
+                url: "/join",
+                type: "POST",
+                data: {
+                    userId: userId,
+                    userPassword: userPassword,
+                },
+                success: function (data) {
+                    if (data == "1") {
+                        alert("signup success!!!!");
+                    } else {
+                        alert("signup fail....");
+                    }
+                 },
+            });
+        });
+        </script>
 </body>
 
 </html>
