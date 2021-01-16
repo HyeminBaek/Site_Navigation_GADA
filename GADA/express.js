@@ -33,25 +33,31 @@ app.get("/login", function (req, res) {
   res.render("login");
 });
 
+app.get("/admin", function (req, res) {
+  res.render("admin");
+});
+app.get("/user", function (req, res) {
+  res.render("user");
+});
 app.post('/join', function (req, res) {
   var userId = req.body.userId;
   var userPassword = req.body.userPassword;
   var checkPassword = req.body.checkPassword;
   console.log(userId, userPassword);
-  if(userPassword == checkPassword){
-  connection.query("INSERT INTO `userinfo`(`userId`,`userPw`) VALUES(?,?);",
-    [
-      userId,
-      userPassword,
-    ],
-    function (error, results, fields) {
-      if (error) throw error;
-      else {
+  if (userPassword == checkPassword) {
+    connection.query("INSERT INTO `userinfo`(`userId`,`userPw`) VALUES(?,?);",
+      [
+        userId,
+        userPassword,
+      ],
+      function (error, results, fields) {
+        if (error) throw error;
+        else {
           res.json("성공");
-      }
-    });
+        }
+      });
   }
-  else{
+  else {
     res.json("실패");
   }
 });
@@ -71,7 +77,10 @@ app.post('/login', function (req, res) {
         res.json(2); // 아이디 존재하지 않음
       } else {
         var storedPassword = results[0].userPw;
-        if (storedPassword == userPassword) {
+        if (results[0].userId == "root" && storedPassword == "root") {
+          res.json("사용자 계정 로그인");
+        }
+        else if (storedPassword == userPassword) {
           console.log("로그인 성공");
           res.json("로그인 성공");
         } else {
