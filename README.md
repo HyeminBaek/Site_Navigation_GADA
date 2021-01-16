@@ -66,9 +66,10 @@ GADA는 사용자의 음성을 인식하여 원하는 페이지로 쉽게 이동
 ![image](https://user-images.githubusercontent.com/55080554/104696065-043ce800-5751-11eb-8c4c-64fa0f09367d.png)
 
 로그인 성공 시 화면은 다음과 같습니다.
-- 사용자 계정
+- 사용자 계정 ☞ user.ejs
+![image](https://user-images.githubusercontent.com/55080554/104812519-19e00980-5846-11eb-9118-df43774f5eaa.png)
 
-유저메인.ejs
+
 사용자 계정의 화면은 다음을 포함합니다 - GADA 서비스, GADA URL 추가 요청
 
 - 운영자 계정
