@@ -98,7 +98,7 @@ cnn
 1) userinfo: 회원 가입 저장용 DB
 id,pwd
 2) : 사용자 url 추가 요청이 저장되는 DB
-기능, 이유
+이용자 ID, 기능, 이유
 3) : GADA 알고리즘에 활용되는 DB
 url, 
 
