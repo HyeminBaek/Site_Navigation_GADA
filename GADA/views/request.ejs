@@ -25,20 +25,43 @@
                 <div class="login-input-container">
 	      <p><b>요청하고 싶은 기능을 입력해주세요</b></p>
                     <div class="login-input-wrap input-id">
-                        <input id = "userId" placeholder="예시: 네이버 카페" type="text">
+                        <input id = "functions" placeholder="예시: 네이버 카페" type="text">
                     </div>
 	       <div>
-		<p><b><br>추가하고 싶은 이유를 작성해주세요</br></b></p>
+		<p><b><br>추가하고 싶은 이유를 작성해주세요</b></p>
 	       </div>
                     <div class="login-input-wrap input-id">
-                        <input id="userId" placeholder="카페 기능을 찾기 힘듭니다."  type="text">
+                        <input id="reason" placeholder="카페 기능을 찾기 힘듭니다."  type="text">
                     </div>
                 </div>
                 <div class="login-btn-wrap">
-                    <button id = "signupBtn" class="login-btn">제출하기</button>
+                    <button id = "submitBtn" class="login-btn">제출하기</button>
                 </div>
             </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="js/global.script.js"></script>
+    <script>
+        $("#submitBtn").click(function () {
+            var functions = $("#functions").val();
+            var reason = $("#reason").val();
+            // #ajax is, password url : '/login'
+            $.ajax({
+                url: "/request",
+                type: "POST",
+                data: {
+                    functions : functions,
+                    reason : reason,
+                },
+                success: function (data) {
+                    if(data == "성공"){
+                        alert("사용자 요청이 처리되었습니다.");
+                    }
+                },
+            });
+        })
+    </script>
 </body>
 
 </html>

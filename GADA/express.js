@@ -2,12 +2,18 @@
 const app = express();
 const path = require("path");
 const request = require('request');
+const expressSession = require('express-session');
 var mysql = require('mysql');
 var jwt = require('jsonwebtoken');
 
+app.use(expressSession({
+  secret :'happy',
+  resave : true,
+  saveUninitialized : true
+}));
 var connection = mysql.createConnection({ // db 연결하기
-  host: '192.168.0.26',
-  user: 'newuser',
+  host: 'localhost',
+  user: 'root',
   password: 'ljh9915!',
   database: 'gada'
 });
@@ -39,6 +45,10 @@ app.get("/admin", function (req, res) {
 app.get("/user", function (req, res) {
   res.render("user");
 });
+app.get("/request", function(req,res){
+  res.render("request");
+})
+
 app.post('/join', function (req, res) {
   var userId = req.body.userId;
   var userPassword = req.body.userPassword;
@@ -61,6 +71,26 @@ app.post('/join', function (req, res) {
     res.json("실패");
   }
 });
+
+app.post("/request", function(req,res){
+  var functions  = req.body.functions;
+  var reason = req.body.reason;
+  console.log(functions, reason);
+  connection.query("INSERT INTO `urluser`(`functions`,`reason`) VALUES(?,?);",
+  [
+    functions,
+    reason,
+  ],
+  function(error, results, fields){
+    if(error) throw error;
+    else{
+      res.json("성공");
+    }
+  });
+});
+
+
+
 
 app.post('/login', function (req, res) {
   var userId = req.body.userId;
